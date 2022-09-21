@@ -30,6 +30,9 @@ int main()
     cin >> i;
     cout << "В шестнадцатиричном виде:" << std::hex << i << std::endl;
     cout << "В бинарном виде:" << std::bitset<16>(i) << std::endl;
+    cout << "bool " << bool(i) << endl;
+    cout << "double " << double(i) << endl;
+    cout << "char " << char(i) << endl;
 
     cout << "Задание№4" << endl;
     int a, b;
