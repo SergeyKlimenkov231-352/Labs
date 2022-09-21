@@ -7,6 +7,7 @@ using namespace std;
 
 int main() 
 {
+    
     setlocale(LC_ALL, "Rus");
     cout << "Клименков Сергей 221-331 " << endl;
 
