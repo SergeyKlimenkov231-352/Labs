@@ -38,7 +38,7 @@ int main()
     int a, b;
     cout << "Впишите переменные: ";
     cin >> a >> b;
-    cout << "x = " << b << "/" << a << " OR " << b / a << endl;
+    cout << "x = " <<(float) b << "/" <<(float) a << " OR " <<(float) b /(float) a << endl;
 
     cout << "Задание№5" << endl;
     int x0, y0, x1, y1;
@@ -46,7 +46,7 @@ int main()
     cin >> x0 >> y0;
     cout << "Вторая координата: ";
     cin >> x1 >> y1;
-    cout << "Середина отрезка = " << (x0 + x1) / 2 << " ; " << (y0 + y1) / 2 << endl;
+    cout << "Середина отрезка = " << ((float)x0 +(float)x1) / 2 << " ; " << ((float)y0 +(float)y1) / 2 << endl;
 
     return 0;
 //sizeof-Определяет размер типа данных; fixed-Представляет числа с плавающей запятой; setprecision-установкa чисел с плавающей запятой; pow-вычисляет Х в степени У. 
