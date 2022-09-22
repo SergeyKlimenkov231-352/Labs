@@ -14,14 +14,14 @@ int main()
     
     cout << "Задание№2" << endl;
     cout << "минимальные/максимальные значения встроенных типов данных и их размер" << endl;
-    cout << "size int=" << sizeof(int) << ",max int=" << fixed<< setprecision(2)<< (pow(2, sizeof(int) * 8.0 - 1) - 1) << endl;
+    cout << "size int=" << sizeof(int) << ",max int=" <<INT_MAX<<",min int="<<INT_MIN<< endl;
     cout << "size unsigned int=" << sizeof(unsigned int) << ",max unsigned int=" << fixed << setprecision(2) << (pow(2, sizeof(unsigned int) * 8.0-1) - 1) << endl;
     cout << "size short=" << sizeof(short) << ",max short=" << fixed << setprecision(2) << (pow(2, sizeof(short) * 8.0 - 1) - 1) << endl;
     cout << "size unsigned short=" << sizeof(unsigned short) << ",max unsigned short=" << fixed << setprecision(2) << (pow(2, sizeof(unsigned short) * 8.0) - 1) << endl;
     cout << "size long=" << sizeof(long int) << ",max long=" << fixed << setprecision(2) << (pow(2, sizeof(long int) * 8.0 - 1) - 1) << endl;
     cout << "size long long=" << sizeof(unsigned long int) << ",max long long=" << fixed << setprecision(2) << (pow(2, sizeof(unsigned long int) * 8.0) - 1) << endl;
     cout << "size double=" << sizeof(double) << ",max double=" << fixed << setprecision(2) << (pow(2, sizeof(double) * 8.0 - 1) - 1) << endl;
-    cout << "size char=" << sizeof(char) << ",max char=" << fixed << setprecision(2) << (pow(2, sizeof(char) * 8.0) - 1) << endl;
+    cout << "size char=" << sizeof(char) << ",max char=" << CHAR_MAX<<",min char="<<CHAR_MIN<< endl;
     cout << "size bool=" << sizeof(bool) << ",max bool=" << fixed << setprecision(2) << (pow(2, sizeof(bool) * 8.0) - 1) << endl;
 
     cout << "Задание№3" << endl;
