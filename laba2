@@ -1,0 +1,79 @@
+#include <iostream>
+#include <clocale>
+//функция для решения задачи 1
+void task1()
+{
+	int main();
+	{
+		setlocale(LC_ALL, "Rus");  // Позволяет писать на русском
+
+		std::cout << "Введите количество строк: ";
+
+		int a;
+		std::cin >> a;
+
+		if (a < 1)
+			return;
+
+		for (int i = 0; i <= a; ++i)
+		{
+			for (int j = 1; j <= i; ++j)
+			{
+				std::cout << j << " ";
+			}
+
+			std::cout << std::endl;
+		}
+	}
+}
+//функция для решения задачи 2
+void task2()
+{
+
+	int main();
+	{   
+		int a;
+		std::cin >> a;
+		for (int j = 0; j <= a; j++) {
+			for (int i = 0; i <= j; i++)
+				std::cout << "Cnk"<<(j, i) << " ";
+			std::cout << "\n";
+		}
+		std::cin.get();
+		std::cin.get();
+
+		return;
+	}
+}
+int main()
+{
+	setlocale(LC_ALL, "Rus");  // Позволяет писать на русском
+	int choice = 0; // в этой переменной будет храниться выбор пользователя
+	while (true) // непрерывный цикл
+	{
+		std::cout << "Что вы хотите выполнить? \n"
+		    <<"1. задание 1\n"
+			<<"2.задание 2\n"
+			<<"3. выход\n";
+			std::cin >> choice;
+		switch (choice)
+		{
+		case 1:
+		{
+			/*вызов функции для решения задания 1*/;
+			task1();
+			break; // если его не ставить, то после вызова task1(), начнет выполнятся task2()
+		}
+		case 2:
+		{
+			/*вызов функции для решения задания 1*/;
+			task2();
+			break;
+		}
+		default:
+		{
+			return 0;
+		}
+		}
+	}
+}
