@@ -1,12 +1,14 @@
 #include <iostream>
-#include <clocale>
-//функция для решения задачи 1
-void task1()
-{
-	int main();
-	{
-		setlocale(LC_ALL, "Rus");  // Позволяет писать на русском
+#include <clocale> // позволяет писать на русском
+#include <conio.h>
+#include <math.h>
+// работает до 60
+using std::cin;
+using std::cout;
 
+//функция для решения задачи 1
+void task1() //При использовании в качестве возвращаемого типа функции ключевое слово указывает, void что функция не возвращает значение
+{
 		std::cout << "Введите количество строк: ";
 
 		int a;
@@ -15,35 +17,40 @@ void task1()
 		if (a < 1)
 			return;
 
-		for (int i = 0; i <= a; ++i)
+		for (int i = 0; i <= a; i++) // ++i возвращает значение уже измененной переменной
 		{
-			for (int j = 1; j <= i; ++j)
+			for (int j = 0; j <= i; j++)
 			{
 				std::cout << j << " ";
 			}
 
 			std::cout << std::endl;
 		}
-	}
 }
 //функция для решения задачи 2
-void task2()
+void task2() 
 {
-
-	int main();
-	{   
-		int a;
-		std::cin >> a;
-		for (int j = 0; j <= a; j++) {
-			for (int i = 0; i <= j; i++)
-				std::cout << "Cnk"<<(j, i) << " ";
-			std::cout << "\n";
-		}
-		std::cin.get();
-		std::cin.get();
-
-		return;
+	long long n, c; //long long: представляет целое число в невероятном диапазоне.
+	cin >> n;
+	c = n;
+	for (int k = 1; k <= n; k++)
+	{
+		cout << k << " " << c << "\n";
+		c *= (n - k);
+		c /= (k + 1);
 	}
+}
+
+void task3() 
+{
+	int num, k = 0, sum = 0;
+	while (cin >> num, num != 0)
+	{
+		k++;
+		sum += num;
+	}
+	std::cout << sum << "\n";
+	std::cout << (double)sum / k << "\n";
 }
 int main()
 {
@@ -52,9 +59,10 @@ int main()
 	while (true) // непрерывный цикл
 	{
 		std::cout << "Что вы хотите выполнить? \n"
-		    <<"1. задание 1\n"
-			<<"2.задание 2\n"
-			<<"3. выход\n";
+		    <<"1. Треугольник\n"
+			<<"2. Пифагор\n"
+			<<"3. Среднее арифметическое\n"
+			<<"4. выход\n";
 			std::cin >> choice;
 		switch (choice)
 		{
@@ -66,8 +74,14 @@ int main()
 		}
 		case 2:
 		{
-			/*вызов функции для решения задания 1*/;
+			/*вызов функции для решения задания 2*/;
 			task2();
+			break;
+		}
+		case 3:
+		{
+			/*вызов функции для решения задания 3*/
+			task3();
 			break;
 		}
 		default:
