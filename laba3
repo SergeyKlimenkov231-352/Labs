@@ -1,0 +1,172 @@
+#include <iostream>
+#include <clocale> 
+#include <conio.h>
+#include <math.h>
+#include <vector>
+
+using namespace std;
+using std::cin;
+using std::cout;
+
+const int max = 1000;
+
+
+   
+//пузырёк
+void task1() //При использовании в качестве возвращаемого типа функции ключевое слово указывает, void что функция не возвращает значение
+{
+
+    int* arr; // указатель для выделения памяти под массив
+    int n; // размер массива
+
+    // Ввод количества элементов массива
+    cout << "n = ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        // Размер масива должен быть положитлеьным
+        cerr << "Invalid size" << endl;
+        return;
+    }
+
+    arr = new int[n]; // выделение памяти под массив
+
+    // заполнение массива
+    for (int i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+
+    int temp; // временная переменная для обмена элементов местами
+
+    // Сортировка массива пузырьком
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                // меняем элементы местами
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    // Вывод отсортированного массива на экран
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    delete[] arr; // освобождение памяти;
+
+    return;
+}
+//подсчёт
+void task2()
+{
+
+    int N, max, min, L, k;
+    cout << "Введите размер массива:" << endl;
+    cout << "N = ";
+    cin >> N;
+    int* A = new int[N];
+    max = INT_MIN;
+    min = INT_MAX;
+    cout << "Введите массив:" << endl;
+    for (int i = 0; i < N; i++)
+    {
+        cin >> A[i];
+        if (A[i] > max)
+            max = A[i];
+        if (A[i] < min)
+            min = A[i];
+    }
+    L = max - min + 1;
+    int* B = new int[L];
+    for (int i = 0; i < L; i++)
+    {
+        B[i] = 0;
+    }
+    for (int i = 0; i < N; i++)
+    {
+        B[A[i] - min]++;
+    }
+    k = 0;
+    for (int i = 0; i < L; i++)
+    {
+        for (int j = 0; j < B[i]; j++)
+        {
+            A[k++] = i + min;
+        }
+    }
+    cout << "Массив после сортировки:" << endl;
+    for (int i = 0; i < N; i++)
+    {
+        cout << A[i] << " ";
+    }
+    cout << endl;
+    delete[] A;
+    delete[] B;
+    system("pause");
+    return;
+}
+//слияние
+void task3()
+{
+
+
+}
+
+
+
+
+
+// меню
+int main()
+{
+    setlocale(LC_ALL, "Rus");  // Позволяет писать на русском
+
+
+
+    int choice = 0; // в этой переменной будет храниться выбор пользователя
+    while (true) // непрерывный цикл
+    {
+        std::cout << "Что вы хотите выполнить? \n"
+            << "1. Сортировка пузырьком\n"
+            << "2. Сортировка подсчётом\n"
+            << "3. Сортировка слиянием\n"
+            << "4. выход\n";
+        std::cin >> choice;
+        switch (choice)
+        {
+        case 1:
+        {
+            /*вызов функции для решения задания 1*/;
+            task1();
+            break; // если его не ставить, то после вызова task1(), начнет выполнятся task2()
+        }
+        case 2:
+        {
+            /*вызов функции для решения задания 2*/;
+            task2();
+            break;
+        }
+        case 3:
+        {
+            /*вызов функции для решения задания 3*/
+            task3();
+            break;
+        }
+        default:
+        {
+            return 0;
+        }
+        }
+    }
+}
